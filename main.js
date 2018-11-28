@@ -33,14 +33,14 @@ function drawLineSeg(drawnPoints) {
     canvasCtx = canvas.getContext("2d");
     canvasCtx.lineWidth = 5.0;
     canvasCtx.lineCap = "round";
-    lastPoint = drawnPoints[0];
-    curPoint = drawnPoints[1];
+    var lastPoint = drawnPoints[0];
+    var curPoint = drawnPoints[1];
     canvasCtx.beginPath();
     canvasCtx.moveTo(lastPoint.x, lastPoint.y);
     canvasCtx.lineTo(curPoint.x, curPoint.y);
     canvasCtx.stroke();
 }
-function clear(ev) {
+function clear() {
     canvasCtx = canvas.getContext("2d");
     canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
 }
