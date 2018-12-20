@@ -9,10 +9,33 @@
     </head>
     <body>
         <p class="mouse-position">(0,0)</p>
+        <div class="color-changer">
+            <button
+                class="color-btn"
+                value="red"
+                style="background-color:red; height:20px;"
+            ></button>
+            <button
+                class="color-btn"
+                value="black"
+                style="background-color:black; height:20px;"
+            ></button>
+            <button
+                class="color-btn"
+                value="blue"
+                style="background-color:blue; height: 20px;"
+            ></button>
+        </div>
         <canvas
             height="500"
             width="1000"
             style="border: 1px solid black"
         ></canvas>
+        <div id="brush-display">
+            <div
+                class="brush-color"
+                style="height: 20px; border: 2px solid black; border-radius: 100%; width: 20px; background-color: black"
+            ></div>
+        </div>
     </body>
 </html>
