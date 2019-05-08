@@ -29,6 +29,11 @@ canvas.addEventListener("mousemove", ev => {
     }
 });
 
+canvas.addEventListener("mousedown", ev => {
+    drawnPoints.push({ x: ev.offsetX, y: ev.offsetY })
+    drawPoint(drawnPoints[0], tool)
+})
+
 canvas.addEventListener("mouseup", () => drawnPoints = [])
 
 canvas.addEventListener("mouseleave", ev => {
@@ -77,6 +82,16 @@ function drawLineSeg(drawnPoints, tool) {
     canvasCtx.beginPath();
     canvasCtx.moveTo(lastPoint.x, lastPoint.y);
     canvasCtx.lineTo(curPoint.x, curPoint.y);
+    canvasCtx.stroke();
+}
+function drawPoint(drawnPoint, tool) {
+    canvasCtx = canvas.getContext("2d");
+    canvasCtx.lineWidth = tool.width;
+    canvasCtx.lineCap = "round";
+    canvasCtx.strokeStyle = tool.color;
+    canvasCtx.beginPath();
+    canvasCtx.moveTo(drawnPoint.x, drawnPoint.y);
+    canvasCtx.lineTo(drawnPoint.x, drawnPoint.y);
     canvasCtx.stroke();
 }
 function clear() {
